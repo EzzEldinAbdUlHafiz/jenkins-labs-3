@@ -1,6 +1,6 @@
 pipeline {
 
-  agent { label 'docker-sq-tv' }
+  agent { label 'build-ec2' }
 
   environment {
     AWS_REGION = 'us-east-1'
@@ -110,7 +110,7 @@ pipeline {
     // ── 9. DEPLOY ──────────────────────────────────────────
 
     stage('Deploy to EC2') {
-      agent { label 'deploy' }
+      agent { label 'deploy-ec2' }
       steps {
         withCredentials([[
           $class: 'AmazonWebServicesCredentialsBinding',
