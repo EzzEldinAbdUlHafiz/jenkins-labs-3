@@ -4,7 +4,7 @@ pipeline {
 
   environment {
     AWS_REGION = 'us-east-1'
-    ECR_URI    = '314694590636.dkr.ecr.us-east-1.amazonaws.com/digi/jenkins'
+    ECR_URI    = '587628267564.dkr.ecr.us-east-1.amazonaws.com/cicd-project'
     IMAGE_TAG  = "${BUILD_NUMBER}"
   }
 
@@ -14,7 +14,7 @@ pipeline {
     stage('Checkout') {
       steps {
         git branch: 'main',
-            url: 'https://github.com/AbdelrhmanEzzat/cicd-project.git'
+            url: 'https://github.com/EzzEldinAbdUlHafiz/jenkins-labs-3'
       }
     }
 
